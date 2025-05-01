@@ -1,8 +1,9 @@
-/* 節點樣式（你已有） */
+/* 節點樣式 */
 .node {
     cursor: pointer;
     z-index: 10;
 }
+
 /* 邊線樣式 */
 line {
     stroke: red;
@@ -10,11 +11,13 @@ line {
     cursor: pointer;
     pointer-events: visibleStroke;
 }
+
 /* 高亮選中的節點 */
 .node.selected {
     background-color: orange !important;
     border: 2px solid #fff;
 }
+
 /* 臨時邊線樣式 */
 #temp-line {
     stroke: orange;
@@ -22,8 +25,8 @@ line {
     stroke-dasharray: 5;
     pointer-events: none;
 }
+
 /* 箭頭設定 */
 #edges-layer marker {
     pointer-events: none;
 }
-

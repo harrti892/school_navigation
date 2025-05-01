@@ -18,10 +18,21 @@ class UserFactory extends Factory
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'password' => bcrypt('password'), // 預設密碼為 password
+            'is_admin' => false,              // 預設為一般使用者
             'remember_token' => Str::random(10),
         ];
     }
+
+    public function admin()
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'is_admin' => true,            // 預設為管理員
+            ];
+        });
+    }
+
 
     /**
      * Indicate that the model's email address should be unverified.
