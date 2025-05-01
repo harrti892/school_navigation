@@ -36,7 +36,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::post('/edges', [EdgeController::class, 'store'])->name('edges.store');
     Route::delete('/edges/{edge_id}', [EdgeController::class, 'destroy'])->name('edges.destroy');
 });
-Route::middl/eware(['auth', 'is_admin'])->group(function () {
+Route::middleware(['auth', 'is_admin'])->group(function () {
     Route::get('/admin/map-editor', [NavigationController::class, 'showMapEditor']);
     Route::post('/admin/add-node', [NavigationController::class, 'addNode']);
     Route::post('/admin/add-edge', [NavigationController::class, 'addEdge']);
